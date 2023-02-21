@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,12 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.home');
+        $testimonials = Testimonial::all();
+        return view('pages.home', compact(['testimonials']));
     }
 
     public function about()
     {
-        return view('pages.about');
+        $about = AboutUs::first();
+        return view('pages.about', compact('about'));
     }
 
     public function blog()

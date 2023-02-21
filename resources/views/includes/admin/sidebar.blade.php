@@ -53,19 +53,19 @@
                 </li>
 
                 <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
+                    <a href="" class='sidebar-link'>
                         <i class="bi bi-file-word-fill"></i>
                         <span>Article</span>
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="component-alert.html">
+                            <a href="{{ route('article.create') }}">
                                 <i class="bi bi-file-earmark-plus-fill"></i>
                                 <span>Tambah Artikel</span>
                             </a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="component-badge.html">
+                            <a href="{{ route('article.list') }}">
                                 <i class="bi bi-card-checklist"></i>
                                 <span>Daftar Artikel</span>
                             </a>
@@ -80,7 +80,7 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="ui-widgets-pricing.html">
+                            <a href="{{ route('image.index') }}">
                                 <i class="bi bi-file-image-fill"></i>
                                 <span>Image</span>
                             </a>
@@ -97,9 +97,21 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
+                            <a href="{{ route('about.index') }}">
+                                <i class="bi bi-info-square-fill"></i>
+                                <span>About Us</span>
+                            </a>
+                            <a href="{{ route('testimonial.list') }}">
+                                <i class="bi bi-bookmark-star-fill"></i>
+                                <span>Testimonial</span>
+                            </a>
                             <a href="form-element-input.html">
-                                <i class="bi bi-person-lines-fill"></i>
-                                <span>Profile</span>
+                                <i class="bi bi-calendar-event-fill"></i>
+                                <span>Event</span>
+                            </a>
+                            <a href="/">
+                                <i class="bi bi-browser-firefox"></i>
+                                <span>Website</span>
                             </a>
                         </li>
                     </ul>
@@ -120,10 +132,15 @@
                             </a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="ui-widgets-pricing.html">
-                                <i class="bi bi-box-arrow-left"></i>
-                                <span>Log-Out</span>
-                            </a>
+                            <form action="{{ url('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-transparent" style="padding: 0px; margin:0px;">
+                                    <a>
+                                        <i class="bi bi-box-arrow-left"></i>
+                                        <span>Log-Out</span>
+                                    </a>
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </li>

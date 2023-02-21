@@ -1,99 +1,97 @@
 @extends('layouts.app')
 @section('title', 'Home')
 @push('banner')
-<!--banner section start -->
-<div class="banner_section layout_padding">
-    <div class="container-fluid">
-        <section class="slide-wrapper">
-            <div class="container-fluid">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                        <li data-target="#myCarousel" data-slide-to="3"></li>
-                        <li data-target="#myCarousel" data-slide-to="4"></li>
-                    </ol>
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="container">
-                                <div class="banner_main">
-                                    <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                    <p class="banner_text">It is a long established fact that a reader will be
-                                        distracted by the readable content of a page when</p>
-                                    <div class="btn_main">
-                                        <div class="contact_bt active "><a href="#">Contact Us</a></div>
-                                        <div class="readmore_bt"><a href="#">Read More</a></div>
+    <!--banner section start -->
+    <div class="banner_section layout_padding">
+        <div class="container-fluid">
+            <section class="slide-wrapper">
+                <div class="container-fluid">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container">
+                                    <div class="banner_main">
+                                        <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
+                                        <p class="banner_text">It is a long established fact that a reader will be
+                                            distracted by the readable content of a page when</p>
+                                        <div class="btn_main">
+                                            <div class="contact_bt active "><a href="#">Contact Us</a></div>
+                                            <div class="readmore_bt"><a href="#">Read More</a></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="banner_main">
-                                    <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                    <p class="banner_text">It is a long established fact that a reader will be
-                                        distracted by the readable content of a page when</p>
-                                    <div class="btn_main">
-                                        <div class="contact_bt active "><a href="#">Contact Us</a></div>
-                                        <div class="readmore_bt"><a href="#">Read More</a></div>
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="banner_main">
+                                        <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
+                                        <p class="banner_text">It is a long established fact that a reader will be
+                                            distracted by the readable content of a page when</p>
+                                        <div class="btn_main">
+                                            <div class="contact_bt active "><a href="#">Contact Us</a></div>
+                                            <div class="readmore_bt"><a href="#">Read More</a></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="banner_main">
-                                    <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                    <p class="banner_text">It is a long established fact that a reader will be
-                                        distracted by the readable content of a page when</p>
-                                    <div class="btn_main">
-                                        <div class="contact_bt active "><a href="#">Contact Us</a></div>
-                                        <div class="readmore_bt"><a href="#">Read More</a></div>
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="banner_main">
+                                        <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
+                                        <p class="banner_text">It is a long established fact that a reader will be
+                                            distracted by the readable content of a page when</p>
+                                        <div class="btn_main">
+                                            <div class="contact_bt active "><a href="#">Contact Us</a></div>
+                                            <div class="readmore_bt"><a href="#">Read More</a></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="banner_main">
-                                    <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                    <p class="banner_text">It is a long established fact that a reader will be
-                                        distracted by the readable content of a page when</p>
-                                    <div class="btn_main">
-                                        <div class="contact_bt active "><a href="#">Contact Us</a></div>
-                                        <div class="readmore_bt"><a href="#">Read More</a></div>
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="banner_main">
+                                        <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
+                                        <p class="banner_text">It is a long established fact that a reader will be
+                                            distracted by the readable content of a page when</p>
+                                        <div class="btn_main">
+                                            <div class="contact_bt active "><a href="#">Contact Us</a></div>
+                                            <div class="readmore_bt"><a href="#">Read More</a></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="banner_main">
-                                    <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                    <p class="banner_text">It is a long established fact that a reader will be
-                                        distracted by the readable content of a page when</p>
-                                    <div class="btn_main">
-                                        <div class="contact_bt active "><a href="#">Contact Us</a></div>
-                                        <div class="readmore_bt"><a href="#">Read More</a></div>
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="banner_main">
+                                        <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
+                                        <p class="banner_text">It is a long established fact that a reader will be
+                                            distracted by the readable content of a page when</p>
+                                        <div class="btn_main">
+                                            <div class="contact_bt active "><a href="#">Contact Us</a></div>
+                                            <div class="readmore_bt"><a href="#">Read More</a></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
-</div>
-<!--banner section end -->
-
-
+    <!--banner section end -->
 @endpush
 @section('content')
-    
+
     <!--about section start -->
     <div class="about_section layout_padding">
         <div class="container">
@@ -197,7 +195,8 @@
             <h1 class="events_taital">Follow Our Video For Solved Your Problem</h1>
             <div class="events_section_2">
                 <div class="events_bg">
-                    <div class="play_icon"><a href="#"><img src="{{ asset('home/images/play-icon.png') }}"></a></div>
+                    <div class="play_icon"><a href="#"><img src="{{ asset('home/images/play-icon.png') }}"></a>
+                    </div>
                 </div>
             </div>
             <div class="seemore_bt"><a href="#">See More</a></div>
@@ -207,17 +206,19 @@
     <!-- contact section start -->
     <div class="contact_section layout_padding">
         <div class="container">
-            <h1 class="contact_taital">Get In Touch</h1>
-            <p class="contact_text">majority have suffered alteration in some form, by injected humour, or </p>
+            <h1 class="contact_taital">Review</h1>
+            <p class="contact_text">Bagikan pengalaman menyenangkan anda mengenai layanan yang kami berikan</p>
             <div class="contact_section_2 layout_padding">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="contact_main">
-                            <input type="text" class="mail_text" placeholder="Full Name" name="Full Name">
-                            <input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number">
-                            <input type="text" class="mail_text" placeholder="Email" name="Email">
-                            <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                            <div class="send_bt"><a href="#">SEND</a></div>
+                            <form action="{{ route('testimonial.store') }}" method="POST">
+                                @csrf
+                                <input type="text" class="mail_text" placeholder="Nama Lengkap" name="name"
+                                    required>
+                                <textarea class="massage-bt" placeholder="Testimonial" rows="10" id="comment" name="testimoni" required></textarea>
+                                <button class="btn send_bt btn-success">SEND</button>
+                            </form>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -244,7 +245,58 @@
                 <li data-target="#my_carousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                @forelse($testimonials as $key => $testimonial)
+                    <div class="carousel-item @if ($key == 0) active @endif">
+                        <div class="container">
+                            <h1 class="testimonial_taital">Testimonial</h1>
+                            <p class="testimonial_text">Berikut cerita menarik dari pelanggan Karya Mukti Sentosa </p>
+                            <div class="testimonial_section_2">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6">
+                                        <div class="testimonial_box">
+                                            <div class="jonimo_taital_main">
+                                                <h4 class="jonimo_text">{{ $testimonial->name, $key }}</h4>
+                                                {{-- <div class="quick_icon"><img src="{{ asset('home/images/quick-icon.png') }}"> --}}
+                                            </div>
+                                            {{-- <div class="quick_icon_1"><img
+                                                    src="{{ asset('home/images/quick-icon1.png') }}"></div>
+                                        </div> --}}
+                                            <p class="dummy_text">{{ $testimonial->testimoni }}</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <h1 class="testimonial_taital">Testimonial</h1>
+                            <p class="testimonial_text">majority have suffered alteration in some form, by injected humour,
+                                or </p>
+                            <div class="testimonial_section_2">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6">
+                                        <div class="testimonial_box">
+                                            <div class="jonimo_taital_main">
+                                                <h4 class="jonimo_text">Anomin</h4>
+                                                <div class="quick_icon"><img
+                                                        src="{{ asset('home/images/quick-icon.png') }}">
+                                                </div>
+                                                <div class="quick_icon_1"><img
+                                                        src="{{ asset('home/images/quick-icon1.png') }}"></div>
+                                            </div>
+                                            <p class="dummy_text">CV. Karya Mukti Sentora Beton melayani dengan sepenuh
+                                                hati</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforelse
+                {{-- <div class="carousel-item">
                     <div class="container">
                         <h1 class="testimonial_taital">Testimonial</h1>
                         <p class="testimonial_text">majority have suffered alteration in some form, by injected humour,
@@ -286,93 +338,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <h1 class="testimonial_taital">Testimonial</h1>
-                        <p class="testimonial_text">majority have suffered alteration in some form, by injected humour,
-                            or </p>
-                        <div class="testimonial_section_2">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="testimonial_box">
-                                        <div class="jonimo_taital_main">
-                                            <h4 class="jonimo_text">Jonimo</h4>
-                                            <div class="quick_icon"><img src="{{ asset('home/images/quick-icon.png') }}">
-                                            </div>
-                                            <div class="quick_icon_1"><img
-                                                    src="{{ asset('home/images/quick-icon1.png') }}"></div>
-                                        </div>
-                                        <p class="dummy_text">There are many variations of passages of Lorem Ipsum
-                                            available, but the majority have suffered alteration in some form, by
-                                            injected humour, or randomised words which don't look even slightly
-                                            believable. If you are going to use a passage of Lorem Ipsum, you need to be
-                                            sure there</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="testimonial_box">
-                                        <div class="jonimo_taital_main">
-                                            <h4 class="jonimo_text">Mark Duo</h4>
-                                            <div class="quick_icon"><img src="{{ asset('home/images/quick-icon.png') }}">
-                                            </div>
-                                            <div class="quick_icon_1"><img
-                                                    src="{{ asset('home/images/quick-icon1.png') }}"></div>
-                                        </div>
-                                        <p class="dummy_text">There are many variations of passages of Lorem Ipsum
-                                            available, but the majority have suffered alteration in some form, by
-                                            injected humour, or randomised words which don't look even slightly
-                                            believable. If you are going to use a passage of Lorem Ipsum, you need to be
-                                            sure there</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <h1 class="testimonial_taital">Testimonial</h1>
-                        <p class="testimonial_text">majority have suffered alteration in some form, by injected humour,
-                            or </p>
-                        <div class="testimonial_section_2">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="testimonial_box">
-                                        <div class="jonimo_taital_main">
-                                            <h4 class="jonimo_text">Jonimo</h4>
-                                            <div class="quick_icon"><img src="{{ asset('home/images/quick-icon.png') }}">
-                                            </div>
-                                            <div class="quick_icon_1"><img
-                                                    src="{{ asset('home/images/quick-icon1.png') }}"></div>
-                                        </div>
-                                        <p class="dummy_text">There are many variations of passages of Lorem Ipsum
-                                            available, but the majority have suffered alteration in some form, by
-                                            injected humour, or randomised words which don't look even slightly
-                                            believable. If you are going to use a passage of Lorem Ipsum, you need to be
-                                            sure there</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="testimonial_box">
-                                        <div class="jonimo_taital_main">
-                                            <h4 class="jonimo_text">Mark Duo</h4>
-                                            <div class="quick_icon"><img src="{{ asset('home/images/quick-icon.png') }}">
-                                            </div>
-                                            <div class="quick_icon_1"><img
-                                                    src="{{ asset('home/images/quick-icon1.png') }}"></div>
-                                        </div>
-                                        <p class="dummy_text">There are many variations of passages of Lorem Ipsum
-                                            available, but the majority have suffered alteration in some form, by
-                                            injected humour, or randomised words which don't look even slightly
-                                            believable. If you are going to use a passage of Lorem Ipsum, you need to be
-                                            sure there</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
