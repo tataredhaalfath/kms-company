@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'File Image')
+@section('title', 'About Us')
 @push('prepend-style')
     <link rel="stylesheet" href="{{ asset('dashboard/assets/extensions/simple-datatables/style.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/assets/css/pages/simple-datatables.css') }}">
@@ -51,11 +51,11 @@
                                         <img src="{{ Storage::url($about->image) }}" alt="image" style="width:250px"
                                             class="img img-thumbnail">
                                     </td>
-                                    <td>{{ $about->detail }}</td>
+                                    <td>{{ $about->about }}</td>
                                     <td>{{ $about->visi }}</td>
                                     <td>{{ $about->misi }}</td>
                                     <td>
-                                        <form action="{{ route('testimonial.delete') }}" method="POST" class="d-inline">
+                                        <form action="{{ route('about.delete') }}" method="POST" class="d-inline">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $about->id }}">
                                             @method('delete')
@@ -82,3 +82,49 @@
     <script src="{{ asset('dashboard/assets/extensions/simple-datatables/umd/simple-datatables.js') }}"></script>
     <script src="{{ asset('dashboard/assets/js/pages/simple-datatables.js') }}"></script>
 @endpush
+
+<!-- form Modal -->
+<div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel33">About Company </h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+            <form action="{{ route('about.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <label>Judul: </label>
+                    <div class="form-group">
+                        <textarea class="form-control" id="about" name="about" placeholder="Tentang Perusahaan" rows="3" required></textarea>
+                    </div>
+                    <label>Visi </label>
+                    <div class="form-group">
+                        <textarea class="form-control" id="visi" name="visi" placeholder="Visi" rows="3" required></textarea>
+                    </div>
+                    <label>Misi </label>
+                    <div class="form-group">
+                        <textarea class="form-control" id="misi" name="misi" placeholder="Misi" rows="3" required></textarea>
+                    </div>
+                    <label>Gambar: </label>
+                    <div class="form-group">
+                        <input type="file" placeholder="Gambar" name="image" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        <i class="bx bx-x d-block d-sm-none"></i>
+                        <span class="d-none d-sm-block">Close</span>
+                    </button>
+                    <button type="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                        <i class="bx bx-check d-block d-sm-none"></i>
+                        <span class="d-none d-sm-block">simpan</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

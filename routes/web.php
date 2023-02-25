@@ -26,13 +26,9 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/events', [HomeController::class, 'events'])->name('events');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
+Route::get('/blog/detail/{slug}', [HomeController::class, 'blogDetail'])->name('blog.detail');
 //Testimonial
 Route::post('/testimonial/create', [WebProfileController::class, 'storeTestimonial'])->name('testimonial.store');
-
-
-// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-//     \UniSharp\LaravelFilemanager\Lfm::routes();
-// });
 
 
 Route::prefix('admin')
@@ -56,7 +52,9 @@ Route::prefix('admin')
         Route::delete('/file/image/destroy', [FileController::class, 'destroy'])->name('image.drop');
 
         // About Us
-        Route::get('/about-us',[WebProfileController::class,'aboutUs'])->name('about.index');
+        Route::get('/about-us', [WebProfileController::class, 'about'])->name('about.index');
+        Route::post('/aout-us', [WebProfileController::class, 'storeAbout'])->name('about.store');
+        Route::delete('/about-us', [WebProfileController::class, 'destroyAbout'])->name('about.delete');
         // Testimonial
         Route::get('/testimoni', [WebProfileController::class, 'listTestimonial'])->name('testimonial.list');
         Route::delete('/testimonial/delete', [WebProfileController::class, 'destroyTestimonial'])->name('testimonial.delete');

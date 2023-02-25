@@ -10,8 +10,9 @@ class AboutUs extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
+        'about',
         'image',
-        'description',
+        'visi',
+        'misi',
     ];
 }

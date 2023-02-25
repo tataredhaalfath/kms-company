@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\Article;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,8 @@ class HomeController extends Controller
     public function index()
     {
         $testimonials = Testimonial::all();
-        return view('pages.home', compact(['testimonials']));
+        $about = AboutUs::first();
+        return view('pages.home', compact(['testimonials', 'about']));
     }
 
     public function about()
@@ -37,7 +39,15 @@ class HomeController extends Controller
 
     public function blog()
     {
-        return view('pages.blog');
+        $blogs = Article::select('title', 'thumbnail', 'slug', 'excerpt')->paginate(10);
+        return view('pages.blog', compact('blogs'));
+    }
+
+    public function blogDetail($slug)
+    {
+        $slug = $slug;
+        $blog = Article::where('slug', $slug)->first();
+        return view('pages.blog-detail', compact('blog'));
     }
 
     public function contact()

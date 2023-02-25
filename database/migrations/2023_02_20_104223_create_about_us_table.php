@@ -15,10 +15,10 @@ class CreateAboutUsTable extends Migration
     {
         Schema::create('about_us', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('about')->nullable();
+            $table->text('about')->nullable();
             $table->string('image')->nullable();
-            $table->string('visi')->nullable();
-            $table->string('misi')->nullable();
+            $table->text('visi')->nullable();
+            $table->text('misi')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

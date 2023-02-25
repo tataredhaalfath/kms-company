@@ -29,9 +29,35 @@ class WebProfileController extends Controller
         return redirect(route('testimonial.list'))->with('status', 'Data berhasil dihapus');
     }
 
-    public function aboutUs()
+    public function about()
     {
         $about = AboutUs::first();
         return view('.pages.admin.webprofile.about-us', compact('about'));
+    }
+
+    public function storeAbout(Request $request)
+    {
+        $request->validate([
+            'about' => 'required',
+            'visi' => 'required',
+            'misi' => 'required',
+            'image' => 'required|image',
+        ]);
+
+        $data = $request->all();
+        $data['image'] = $request->file('image')->store('img', 'public');
+        AboutUs::create($data);
+        return redirect(route('about.index'))->with('status', "Data berhasil disimpan");
+    }
+
+    public function destroyAbout(Request $request)
+    {
+
+        $id = $request->id;
+        $data = AboutUs::findOrFail($id);
+        unlink(public_path('storage/' . $data->image));
+        $data->delete();
+
+        return redirect(route('about.index'))->with('status', "Data berhasil dihapus");
     }
 }

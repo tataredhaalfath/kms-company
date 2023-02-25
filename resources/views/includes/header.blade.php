@@ -6,27 +6,24 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item @if(Route::current()->getName() == "home") active @endif">
                 <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item @if(Route::current()->getName() == "services") active @endif">
                 <a class="nav-link" href="{{ route('services') }}">Services</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item @if(Route::current()->getName() == "blog" || Route::current()->getName() == "blog.detail") active @endif">
                 <a class="nav-link" href="{{ route('blog') }}">Blog</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item @if(Route::current()->getName() == "about") active @endif">
                 <a class="nav-link" href="{{ route('about') }}">About</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item @if(Route::current()->getName() == "events") active @endif">
                 <a class="nav-link" href="{{ route('events') }}">Events</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item @if(Route::current()->getName() == "contact") active @endif">
                 <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <div class="search_icon"><img src="{{ asset('home/images/search-icon.png') }}"></div>
-        </form>
     </div>
 </nav>
