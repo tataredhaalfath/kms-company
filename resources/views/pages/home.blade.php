@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home')
+@section('title', 'KARYA MUKTI SENTOSA')
 @push('banner')
     <!--banner section start -->
     <div class="banner_section layout_padding">
@@ -17,71 +17,25 @@
                         </ol>
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="container">
-                                    <div class="banner_main">
-                                        <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                        <p class="banner_text">It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when</p>
-                                        <div class="btn_main">
-                                            <div class="contact_bt active "><a href="#">Contact Us</a></div>
-                                            <div class="readmore_bt"><a href="#">Read More</a></div>
+                            @forelse($products as $key => $product)
+                                <div class="carousel-item @if ($key == 0) active @endif">
+                                    <div class="container">
+                                        <div class="banner_main">
+                                            <h1 class="banner_taital">{{ $product->name }}</h1>
+                                            <p class="banner_text">{{ $product->excerpt }}</p>
+                                            <div class="btn_main">
+                                                <div class="contact_bt active "><a href="{{ route('contact') }}">Contact
+                                                        Us</a></div>
+                                                <div class="readmore_bt"><a
+                                                        href="{{ route('services.detail', $product->slug) }}">Lihat
+                                                        Detail</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="container">
-                                    <div class="banner_main">
-                                        <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                        <p class="banner_text">It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when</p>
-                                        <div class="btn_main">
-                                            <div class="contact_bt active "><a href="#">Contact Us</a></div>
-                                            <div class="readmore_bt"><a href="#">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="container">
-                                    <div class="banner_main">
-                                        <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                        <p class="banner_text">It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when</p>
-                                        <div class="btn_main">
-                                            <div class="contact_bt active "><a href="#">Contact Us</a></div>
-                                            <div class="readmore_bt"><a href="#">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="container">
-                                    <div class="banner_main">
-                                        <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                        <p class="banner_text">It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when</p>
-                                        <div class="btn_main">
-                                            <div class="contact_bt active "><a href="#">Contact Us</a></div>
-                                            <div class="readmore_bt"><a href="#">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="container">
-                                    <div class="banner_main">
-                                        <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                        <p class="banner_text">It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when</p>
-                                        <div class="btn_main">
-                                            <div class="contact_bt active "><a href="#">Contact Us</a></div>
-                                            <div class="readmore_bt"><a href="#">Read More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @empty
+                            @endforelse
                         </div>
                     </div>
                 </div>
@@ -95,53 +49,30 @@
     <!-- services section start -->
     <div class="services_section layout_padding">
         <div class="container">
-            <h1 class="services_taital">What We Do</h1>
-            <p class="about_text">It is a long established fact that a reader will be distracted by the readable
-                content of a page when</p>
+            <h1 class="services_taital">Layanan Kami</h1>
+            <p class="about_text text-muted">Misi dari perusahaan kami adalah menjadi mitra yang memberikan layanan
+                jasa keahlian profesional yang efektif dan efisien dan pembenahan serta pembaruan
+                pembelajara sistem agar menjadi mitra yang terpercaya baik dalam ukuran regional
+                maupun nasional karena “kepuasan klien adalah yang paling utama bagi kami” <br>
+                Adapun produk - produk kami sebagai penyedia barang dan jasa adalah sebagai
+                berikut :</p>
             <div class="services_section_2">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="{{ asset('home/images/icon-1.png') }}"></div>
+                    @forelse ($products as $product)
+                        <div class="col-lg-4">
+                            <a href="{{ route('services.detail', $product->slug) }}">
+                                <div class="icon_box">
+                                    <div class="icon_1">
+                                        <img src="{{ Storage::url($product->logo) }}" height="42px" width="42px"
+                                            style="object-fit: cover">
+                                    </div>
+                                </div>
+                                <h4 class="selection_text">{{ $product->name }}</h4>
+                            </a>
+                            <p class="ipsum_text">{{ $product->excerpt }}</p>
                         </div>
-                        <h4 class="selection_text">Selection of Business</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the
-                            form, by injected humour, or randomised</p>
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="{{ asset('home/images/icon-4.png') }}"></div>
-                        </div>
-                        <h4 class="selection_text">Securities Transactions</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the
-                            form, by injected humour, or randomised</p>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="{{ asset('home/images/icon-2.png') }}"></div>
-                        </div>
-                        <h4 class="selection_text">Research and Analytics</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the
-                            form, by injected humour, or randomised</p>
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="{{ asset('home/images/icon-5.png') }}"></div>
-                        </div>
-                        <h4 class="selection_text">Advisory Activities</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the
-                            form, by injected humour, or randomised</p>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="{{ asset('home/images/icon-3.png') }}"></div>
-                        </div>
-                        <h4 class="selection_text">Business Plans</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the
-                            form, by injected humour, or randomised</p>
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="{{ asset('home/images/icon-6.png') }}"></div>
-                        </div>
-                        <h4 class="selection_text">Management and Asset</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the
-                            form, by injected humour, or randomised</p>
-                    </div>
+                    @empty
+                    @endforelse
                 </div>
             </div>
         </div>
@@ -150,35 +81,30 @@
     <!-- blog section start -->
     <div class="blog_section layout_padding">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="blog_img"><img src="{{ asset('home/images/blog-img.png') }}"></div>
+            @forelse ($articles as $article)
+                <div class="row my-5">
+                    <div class="col-md-6">
+                        <div class="blog_img"><img src="{{ Storage::url($article->thumbnail) }}"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="blog_taital">{{ $article->title }} </h1>
+                        <p class="blog_text">{{ $article->excerpt }}</p>
+                        <div class="read_bt"><a href="{{ route('blog.detail', $article->slug) }}">Baca Artikel</a></div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h1 class="blog_taital">Easily Grow Your Business Earn More Money</h1>
-                    <p class="blog_text">There are many variations of passages of Lorem Ipsum available, but the
-                        majority have suffered alteration in some form, by injected humour, or randomised words There
-                        uffered alteration in some form, by injected humour, or randomised words </p>
-                    <div class="read_bt"><a href="#">Read More</a></div>
+            @empty
+                <div class="row">
+                    <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6">
+                    </div>
                 </div>
-            </div>
+            @endforelse
+
         </div>
     </div>
     <!-- blog section end -->
-    <!-- events section start -->
-    <div class="events_section layout_padding">
-        <div class="container">
-            <h1 class="events_taital">Follow Our Video For Solved Your Problem</h1>
-            <div class="events_section_2">
-                <div class="events_bg">
-                    <div class="play_icon"><a href="#"><img src="{{ asset('home/images/play-icon.png') }}"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="seemore_bt"><a href="#">See More</a></div>
-        </div>
-    </div>
-    <!-- events section end -->
+
     <!-- contact section start -->
     <div class="contact_section layout_padding">
         <div class="container">
@@ -190,8 +116,7 @@
                         <div class="contact_main">
                             <form action="{{ route('testimonial.store') }}" method="POST">
                                 @csrf
-                                <input type="text" class="mail_text" placeholder="Nama Lengkap" name="name"
-                                    required>
+                                <input type="text" class="mail_text" placeholder="Nama Lengkap" name="name" required>
                                 <textarea class="massage-bt" placeholder="Testimonial" rows="10" id="comment" name="testimoni" required></textarea>
                                 <button class="btn send_bt btn-success">SEND</button>
                             </form>
@@ -231,12 +156,8 @@
                                     <div class="col-md-6">
                                         <div class="testimonial_box">
                                             <div class="jonimo_taital_main">
-                                                <h4 class="jonimo_text">{{ $testimonial->name, $key }}</h4>
-                                                {{-- <div class="quick_icon"><img src="{{ asset('home/images/quick-icon.png') }}"> --}}
+                                                <h4 class="jonimo_text">{{ $testimonial->name }}</h4>
                                             </div>
-                                            {{-- <div class="quick_icon_1"><img
-                                                    src="{{ asset('home/images/quick-icon1.png') }}"></div>
-                                        </div> --}}
                                             <p class="dummy_text">{{ $testimonial->testimoni }}</p>
                                         </div>
                                     </div>
@@ -272,49 +193,6 @@
                         </div>
                     </div>
                 @endforelse
-                {{-- <div class="carousel-item">
-                    <div class="container">
-                        <h1 class="testimonial_taital">Testimonial</h1>
-                        <p class="testimonial_text">majority have suffered alteration in some form, by injected humour,
-                            or </p>
-                        <div class="testimonial_section_2">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="testimonial_box">
-                                        <div class="jonimo_taital_main">
-                                            <h4 class="jonimo_text">Jonimo</h4>
-                                            <div class="quick_icon"><img src="{{ asset('home/images/quick-icon.png') }}">
-                                            </div>
-                                            <div class="quick_icon_1"><img
-                                                    src="{{ asset('home/images/quick-icon1.png') }}"></div>
-                                        </div>
-                                        <p class="dummy_text">There are many variations of passages of Lorem Ipsum
-                                            available, but the majority have suffered alteration in some form, by
-                                            injected humour, or randomised words which don't look even slightly
-                                            believable. If you are going to use a passage of Lorem Ipsum, you need to be
-                                            sure there</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="testimonial_box">
-                                        <div class="jonimo_taital_main">
-                                            <h4 class="jonimo_text">Mark Duo</h4>
-                                            <div class="quick_icon"><img src="{{ asset('home/images/quick-icon.png') }}">
-                                            </div>
-                                            <div class="quick_icon_1"><img
-                                                    src="{{ asset('home/images/quick-icon1.png') }}"></div>
-                                        </div>
-                                        <p class="dummy_text">There are many variations of passages of Lorem Ipsum
-                                            available, but the majority have suffered alteration in some form, by
-                                            injected humour, or randomised words which don't look even slightly
-                                            believable. If you are going to use a passage of Lorem Ipsum, you need to be
-                                            sure there</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </div>

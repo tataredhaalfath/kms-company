@@ -224,7 +224,7 @@ button {
 .header_section {
     width: 100%;
     float: left;
-    background-image: url(../images/banner-bg.png);
+    background-image: url(../images/main-bg.jpg);
     height: auto;
     background-size: 100%;
 }
@@ -277,6 +277,7 @@ button {
 }
 .banner_main {
     width: 44%;
+    height: 340px;
     float: left;
     background: #fff;
     padding: 40px;
@@ -285,7 +286,7 @@ button {
 .banner_taital {
     width: 100%;
     float: left;
-    font-size: 48px;
+    font-size: 28px;
     color: #060707;
     font-weight: bold;
 }
@@ -458,7 +459,7 @@ button {
 .services_section{
     width: 100%;
     float: left;
-    background-image: url(../images/services-bg.png);
+    background-image: url(../images/hero1.png);
     background-size: 100%;
     background-repeat: no-repeat;
 }

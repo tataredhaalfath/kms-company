@@ -3,7 +3,7 @@
 @section('content')
     <div id="auth-left">
         <div class="auth-logo">
-            <a href="index.html"><img src="assets/images/logo/logo.svg" alt="Logo"></a>
+            <a href="index.html"><img src="{{ asset('home/images/logo.png') }}" alt="Logo"></a>
         </div>
         <h1 class="auth-title">Forgot Password</h1>
         <p class="auth-subtitle mb-5">Input your email and we will send you reset password link.</p>

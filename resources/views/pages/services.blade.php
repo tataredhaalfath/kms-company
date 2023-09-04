@@ -1,56 +1,30 @@
 @extends('layouts.app')
-@section('title', 'Services')
+@section('title', 'Layanan Kami')
 @section('content')
     <!-- services section start -->
     <div class="services_section layout_padding">
         <div class="container">
-            <h1 class="services_taital">What We Do</h1>
-            <p class="about_text">It is a long established fact that a reader will be distracted by the readable content of a
-                page when</p>
+            <h1 class="services_taital">Layanan Kami</h1>
+            <p class="about_text text-muted">Misi dari perusahaan kami adalah menjadi mitra yang memberikan layanan
+                jasa keahlian profesional yang efektif dan efisien dan pembenahan serta pembaruan
+                pembelajara sistem agar menjadi mitra yang terpercaya baik dalam ukuran regional
+                maupun nasional karena “kepuasan klien adalah yang paling utama bagi kami” <br>
+                Adapun produk - produk kami sebagai penyedia barang dan jasa adalah sebagai
+                berikut :</p>
             <div class="services_section_2">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="images/icon-1.png"></div>
+                    @forelse($products as $product)
+                        <div class="col-lg-4">
+                            <a href="{{ route('services.detail', $product->slug) }}">
+                                <div class="icon_box">
+                                    <div class="icon_1"><img src="{{ Storage::url($product->logo) }}"></div>
+                                </div>
+                                <h4 class="selection_text">{{ $product->name }}</h4>
+                            </a>
+                            <p class="ipsum_text">{{ $product->excerpt }}</p>
                         </div>
-                        <h4 class="selection_text">Selection of Business</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the form,
-                            by injected humour, or randomised</p>
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="images/icon-4.png"></div>
-                        </div>
-                        <h4 class="selection_text">Securities Transactions</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the form,
-                            by injected humour, or randomised</p>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="images/icon-2.png"></div>
-                        </div>
-                        <h4 class="selection_text">Research and Analytics</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the form,
-                            by injected humour, or randomised</p>
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="images/icon-5.png"></div>
-                        </div>
-                        <h4 class="selection_text">Advisory Activities</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the form,
-                            by injected humour, or randomised</p>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="images/icon-3.png"></div>
-                        </div>
-                        <h4 class="selection_text">Business Plans</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the form,
-                            by injected humour, or randomised</p>
-                        <div class="icon_box">
-                            <div class="icon_1"><img src="images/icon-6.png"></div>
-                        </div>
-                        <h4 class="selection_text">Management and Asset</h4>
-                        <p class="ipsum_text">There are many variations of passages of Lorem Ipsum available, but the form,
-                            by injected humour, or randomised</p>
-                    </div>
+                    @empty
+                    @endforelse
                 </div>
             </div>
         </div>

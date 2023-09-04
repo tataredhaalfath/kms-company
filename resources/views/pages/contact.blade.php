@@ -1,20 +1,29 @@
 @extends('layouts.app')
-@section('title', 'About')
+@section('title', 'Kontak Kami')
 @section('content')
     <!-- contact section start -->
-    <div class="contact_section layout_padding margin_top90">
+    <div class="events_section layout_padding">
         <div class="container">
-            <h1 class="contact_taital">Get In Touch</h1>
-            <p class="contact_text">majority have suffered alteration in some form, by injected humour, or </p>
-            <div class="contact_section_2 layout_padding">
+            <div class="events_section_2">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="contact_main">
-                            <input type="text" class="mail_text" placeholder="Full Name" name="Full Name">
-                            <input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number">
-                            <input type="text" class="mail_text" placeholder="Email" name="Email">
-                            <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                            <div class="send_bt"><a href="#">SEND</a></div>
+                            <h1>Kontak Kami</h1>
+                            <p>Segera hubungi marketing kami untuk berkonsultasi tentang kebutuhan material bangunan beton
+                                precast anda, kami selalu siap membantu.
+                                <br><br>
+                                Alamat Kantor Karya Mukti Sentosa
+                                <br><br>
+                                Jl. Pati-Tayu RT 005 RW 002 Sidomukti - Margoyoso, Margolilo, Sidomukti, Kec. Margoyoso,
+                                Kabupaten Pati, Jawa Tengah 59154
+                                <br><br>
+                                Phone: <a href="https://api.whatsapp.com/send/?phone=6281328588881&text&type=phone_number&app_absent=0" class="text-primary">0813 2858 8881</a>
+                                <br><br>
+                                Contact Persons:
+                                <br><br>
+                                Untuk order anda dapat menghubungi marketing kami.
+
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6">

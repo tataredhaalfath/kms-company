@@ -9,8 +9,8 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Data Artikel</h3>
-                    <p class="text-subtitle text-muted">Data artikel blog</p>
+                    <h3>Data Produk</h3>
+                    <p class="text-subtitle text-muted">Daftar layanan yang disediakan Kaya Mukti Sentosa</p>
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
@@ -20,7 +20,7 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <div class="float-end float-sm-end float-md-end float-lg-end">
-                            <a href="{{ route('article.create') }}" class="btn btn-primary">
+                            <a href="{{ route('product.create') }}" class="btn btn-primary">
                                 Tambah
                             </a>
                         </div>
@@ -36,40 +36,36 @@
                             <tr>
                                 <th>Gambar</th>
                                 <th>Judul</th>
-                                <th>Kategori</th>
-                                <th>Tanggal</th>
+                                <th>Keterangan</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($articles as $article)
+                            @forelse ($products as $product)
                                 <tr>
                                     <td width="30%">
-                                        <img src="{{ Storage::url($article->thumbnail) }}" alt="image"
-                                            style="width:250px" class="img img-thumbnail">
+                                        <img src="{{ Storage::url($product->logo) }}" alt="image" style="width:250px"
+                                            class="img img-thumbnail">
                                     </td>
                                     <td>
-                                        {{ $article->title }}
+                                        {{ $product->name }}
+                                    </td>
+                                    <td width="50%">
+                                        {{ $product->excerpt }}
                                     </td>
                                     <td>
-                                        {{ $article->category }}
-                                    </td>
-                                    <td>
-                                        {{ $article->date }}
-                                    </td>
-                                    <td>
-                                        <form action="{{ route('article.edit') }}" method="POST" class="d-inline">
+                                        <form action="{{ route('product.edit') }}" method="POST" class="d-inline">
                                             @csrf
                                             <button class="btn icon btn-info mb-2">
-                                                <input type="hidden" name="id" value="{{ $article->id }}">
+                                                <input type="hidden" name="id" value="{{ $product->id }}">
                                                 <i class="bi bi-pen"></i>
                                             </button>
                                         </form>
-                                        <form action="{{ route('article.delete') }}" method="POST" class="d-inline">
+                                        <form action="{{ route('product.delete') }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('delete')
-                                            <input type="hidden" name="id" value="{{ $article->id }}">
-                                            <button class="btn icon btn-danger mb-2" onclick="return confirm('Hapus Artikel ?')">
+                                            <input type="hidden" name="id" value="{{ $product->id }}">
+                                            <button class="btn icon btn-danger mb-2" onclick="return confirm('Hapus Produk / Layanan ?')">
                                                 <i class="bi bi-trash"></i>
                                             </button>
                                         </form>

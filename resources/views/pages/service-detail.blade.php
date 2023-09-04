@@ -1,15 +1,14 @@
 @extends('layouts.app')
-@section('title', $blog->title)
+@section('title', $product->name)
 @section('content')
     <!-- blog section start -->
     <div class="blog_section layout_padding">
         <div class="container mb-5">
             <div class="row">
                 <div class="col-12 col-md-10 col-lg-10">
-                    <h1>{{ $blog->title }}</h1>
-                    <img src="{{ Storage::url($blog->thumbnail) }}" alt="">
+                    <h1>{{ $product->name }}</h1>
                     <p>
-                        {!! $blog->description !!}
+                        {!! $product->description!!}
                     </p>
                 </div>
             </div>

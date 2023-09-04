@@ -3,7 +3,7 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <a href="index.html"><img src="{{ asset('dashboard/assets/images/logo/logo.svg') }}" alt="Logo"
+                    <a href="{{ route('dashboard') }}"><img src="{{ asset('home/images/logo.png') }}" style="width:100px; height:50px" alt="Logo"
                             srcset="">
                     </a>
                 </div>
@@ -45,8 +45,8 @@
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
 
-                <li class="sidebar-item active ">
-                    <a href="{{route('dashboard')}}" class='sidebar-link'>
+                <li class="sidebar-item ">
+                    <a href="{{ route('dashboard') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
@@ -65,9 +65,30 @@
                             </a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="{{ route('article.list') }}">
+                            <a href="{{ route('article.index') }}">
                                 <i class="bi bi-card-checklist"></i>
                                 <span>Daftar Artikel</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item  has-sub">
+                    <a href="" class='sidebar-link'>
+                        <i class="bi bi-bag"></i>
+                        <span>Produk</span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="{{ route('product.create') }}">
+                                <i class="bi bi-bag-check"></i>
+                                <span>Tambah Produk</span>
+                            </a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="{{ route('product.index') }}">
+                                <i class="bi bi-box2-fill"></i>
+                                <span>Daftar Produk</span>
                             </a>
                         </li>
                     </ul>
@@ -105,11 +126,7 @@
                                 <i class="bi bi-bookmark-star-fill"></i>
                                 <span>Testimonial</span>
                             </a>
-                            <a href="form-element-input.html">
-                                <i class="bi bi-calendar-event-fill"></i>
-                                <span>Event</span>
-                            </a>
-                            <a href="/">
+                            <a href="{{ route('home') }}">
                                 <i class="bi bi-browser-firefox"></i>
                                 <span>Website</span>
                             </a>
@@ -126,9 +143,9 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="ui-widgets-chatbox.html">
-                                <i class="bi bi-people-fill"></i>
-                                <span>User</span>
+                            <a href="{{ route('profile') }}">
+                                <i class="bi bi-person"></i>
+                                <span>Profile</span>
                             </a>
                         </li>
                         <li class="submenu-item ">

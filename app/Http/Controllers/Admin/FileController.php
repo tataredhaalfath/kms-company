@@ -10,7 +10,7 @@ class FileController extends Controller
 {
     public function index()
     {
-        $images = Image::all();
+        $images = Image::orderBy('id', 'DESC')->get();
         return view('pages.admin.file.index', compact('images'));
     }
 
@@ -32,7 +32,7 @@ class FileController extends Controller
     public function destroy(Request $request)
     {
         $image = Image::findOrFail($request->id);
-        unlink(public_path('storage/' . $image->url));
+        unlink(public_path('storage/' . $image->image));
         $image->delete();
 
         return redirect(route('image.index'))->with('status', 'Data gambar berhasil dihapus');

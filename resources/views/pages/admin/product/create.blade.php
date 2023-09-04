@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('titile', 'Create Article')
+@section('titile', 'Create Produk')
 @push('prepend-style')
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
@@ -15,64 +15,54 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Tambah Artikel</h3>
+                    <h3>Tambah Produk / Layanan</h3>
                 </div>
             </div>
         </div>
         <section class="section">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('article.store') }}" method="POST", enctype="multipart/form-data">
+                    <form action="{{ route('product.store') }}" method="POST", enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="title">Judul</label>
-                                    <input type="text" class="form-control" id="title" name="title"
-                                        placeholder="judul" value="{{ old('title') }}" required>
+                                    <label for="name">Nama Produk / Layanan</label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        placeholder="nama product / layanan" value="{{ old('name') }}" required>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="excerpt">Kutipan</label>
+                                    <textarea type="text" class="form-control" id="excerpt" name="excerpt" placeholder="kutipan" rows="5"
+                                        required>{{ old('excerpt') }}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="slug">Slug</label>
                                     <input type="text" class="form-control" id="slug" name="slug"
                                         placeholder="slug" value="{{ old('slug') }}" required>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="category">Kategori</label>
-                                    <input type="text" class="form-control" id="category" name="category"
-                                        placeholder="kategori" value="{{ old('category') }}" required>
-                                </div>
 
                                 <div class="form-group">
-                                    <label for="thumbnail">Gambar</label>
-                                    <input type="text" class="form-control" id="thumbnail" name="thumbnail"
-                                        placeholder="gambar" value="{{ old('thumbnail') }}" required>
+                                    <label for="logo">Logo</label>
+                                    <input type="text" class="form-control" id="logo" name="logo"
+                                        placeholder="logo" value="{{ old('logo') }}" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                                 <div class="form-group">
                                     <label for="my-editor" class="form-label">Deskripsi</label>
                                     <textarea name="description" class="my-editor form-control" id="my-editor" cols="30" rows="10" required>{{ old('description') }}</textarea>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="excerpt">Kutipan</label>
-                                    <input type="text" class="form-control" id="excerpt" name="excerpt"
-                                        placeholder="kutipan" value="{{ old('excerpt') }}" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="date">Tanggal</label>
-                                    <input class="date form-control" name="date" type="text">
-                                </div>
-                                <div class="form-group">
-                                    <button class="btn btn-primary" type="submit">Simpan</button>
-                                </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="form-group">
+                                <button class="btn btn-primary" type="submit">Simpan</button>
                             </div>
                         </div>
                     </form>

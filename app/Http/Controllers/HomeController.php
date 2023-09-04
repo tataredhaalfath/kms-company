@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
 use App\Models\Article;
+use App\Models\Product;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,10 @@ class HomeController extends Controller
     {
         $testimonials = Testimonial::all();
         $about = AboutUs::first();
-        return view('pages.home', compact(['testimonials', 'about']));
+        $products = Product::all();
+        $articles = Article::take(5)->get();
+
+        return view('pages.home', compact(['testimonials', 'about', 'products', 'articles']));
     }
 
     public function about()
@@ -62,6 +66,13 @@ class HomeController extends Controller
 
     public function services()
     {
-        return view('pages.services');
+        $products = Product::all();
+        return view('pages.services', compact('products'));
+    }
+
+    public function servicesDetail($slug)
+    {
+        $product = Product::where('slug', $slug)->first();
+        return view('pages.service-detail', compact('product'));
     }
 }

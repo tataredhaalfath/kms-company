@@ -12,7 +12,7 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::with('author')->get();
+        $articles = Article::with('author')->orderBy('id', 'DESC')->get();
         return view('pages.admin.article.index', compact('articles'));
     }
 
@@ -28,7 +28,7 @@ class ArticleController extends Controller
         unset($data['_token']);
         Article::insert($data);
 
-        return redirect(route('article.list'))->with('status', 'Artikel berhasil dibuat');
+        return redirect(route('article.index'))->with('status', 'Artikel berhasil dibuat');
     }
 
     public function edit(Request $request)
@@ -46,12 +46,12 @@ class ArticleController extends Controller
 
         $article = Article::findOrFail($request->id);
         $article->update($data);
-        return redirect(route('article.list'))->with('status', 'Artikel berhasil diubah');
+        return redirect(route('article.index'))->with('status', 'Artikel berhasil diubah');
     }
 
     public function delete(Request $request)
     {
         Article::destroy($request->id);
-        return redirect(route('article.list'))->with('status', 'Artikel berhasil dihapus');
+        return redirect(route('article.index'))->with('status', 'Artikel berhasil dihapus');
     }
 }

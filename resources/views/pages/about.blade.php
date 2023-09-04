@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'About')
+@section('title', $about->about)
 @section('content')
     <!--about section start -->
     <div class="about_section layout_padding">

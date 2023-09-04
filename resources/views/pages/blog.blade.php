@@ -12,7 +12,7 @@
                     <div class="col-md-6">
                         <h1 class="blog_taital">{{ $blog->title }}</h1>
                         <p class="blog_text">{{ $blog->excerpt }} </p>
-                        <div class="read_bt"><a href="{{ route('blog.detail', $blog->slug) }}">Read More</a></div>
+                        <div class="read_bt"><a href="{{ route('blog.detail', $blog->slug) }}">Baca Artikel</a></div>
                     </div>
                 </div>
             @empty
