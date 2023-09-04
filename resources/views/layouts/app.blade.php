@@ -16,9 +16,12 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="{{ request()->url() }}">
     @isset($blog)
+    <meta name="keywords" content="{{ $blog->title }}" />
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{ $blog->title }}">
     <meta property="og:description" content="{{ $blog->excerpt }}">
+    <meta property="og:url" content="{{ request()->url() }}">
+    <meta property="og:image" content="{{ Storage::url($blog->thumbnail)  }}">
     @endisset
     <meta property="og:url" content="{{ request()->url() }}">
     <meta property="og:site_name" content="KARYA MUKTI SENTOSA">
